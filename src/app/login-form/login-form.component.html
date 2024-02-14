@@ -1,0 +1,78 @@
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <ul class="nav nav-pills nav jsutified mb-3" id ="ex1" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button [ngClass] = "active == 'login' ? 'nav-link active' : 'nav-link'" id="tab-login" (click) ="onLoginTab()">Login</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button [ngClass] = "active == 'register' ? 'nav-link active' : 'nav-link'" id="tab-register" (click) ="onRegisterTab()">
+          Register</button>
+      </li>
+      </ul>
+      <div [ngClass]="active == 'login' ? 'tab-pane fade show active' : 'tab-pane fade'">
+      <form (ngSubmit)="onSubmitLogin()" #loginForm="ngForm">
+        <div>
+          <div>
+            <input type="text" id="loginName" name="username" [(ngModel)]="username" />
+            <label for="loginName">Username</label>
+          </div>
+          <div class="from-outline mb-4">
+            <input type="password" id="loginPassword" name="password" [(ngModel)]="password" />
+            <label for="loginPassword">Password</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+          </div>
+        </form>
+      </div>
+
+      <div [ngClass]="active == 'register' ? 'tab-pane fade show active' : 'tab-pane fade'">
+        <form (ngSubmit)="onSubmitRegister()" #registerForm="ngForm">
+          <div>
+            <div>
+              <input type="text" id="username" name="username" [(ngModel)]="registerData.username" />
+              <label for="username">Username</label>
+            </div>
+            <div>
+              <input type="password" id="registerPassword" name="password" [(ngModel)]="registerData.password" />
+              <label for="registerPassword">Password</label>
+            </div>
+            <div>
+              <input type="email" id="email" name="email" [(ngModel)]="registerData.email" />
+              <label for="email">Email</label>
+            </div>
+            <div>
+              <input type="text" id="firstName" name="firstName" [(ngModel)]="registerData.firstName" />
+              <label for="firstName">First Name</label>
+            </div>
+            <div>
+              <input type="text" id="lastName" name="lastName" [(ngModel)]="registerData.lastName" />
+              <label for="lastName">Last Name</label>
+            </div>
+            <div>
+              <input type="date" id="dateOfBirth" name="dateOfBirth" [(ngModel)]="registerData.dateOfBirth" />
+              <label for="dateOfBirth">Date of Birth</label>
+            </div>
+            <div>
+              <input type="text" id="address" name="address" [(ngModel)]="registerData.address" />
+              <label for="address">Address</label>
+            </div>
+            <div>
+              <input type="text" id="city" name="city" [(ngModel)]="registerData.city" />
+              <label for="city">City</label>
+            </div>
+            <div>
+              <input type="text" id="postalCode" name="postalCode" [(ngModel)]="registerData.postalCode" />
+              <label for="postalCode">Postal Code</label>
+            </div>
+            <div>
+              <input type="text" id="phoneNumber" name="phoneNumber" [(ngModel)]="registerData.phoneNumber" />
+              <label for="phoneNumber">Phone Number</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block mb-4">Register</button>
+          </div>
+        </form>
+      </div>
+
+
+    </div>
+    </div>
