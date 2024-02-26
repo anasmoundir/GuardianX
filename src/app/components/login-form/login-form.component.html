@@ -8,8 +8,10 @@
         <button [ngClass] = "active == 'register' ? 'nav-link active' : 'nav-link'" id="tab-register" (click) ="onRegisterTab()">
           Register</button>
       </li>
+
       </ul>
       <div [ngClass]="active == 'login' ? 'tab-pane fade show active' : 'tab-pane fade'">
+        <app-error [errorMessage]="error"></app-error>
       <form (ngSubmit)="onSubmitLogin()" #loginForm="ngForm">
         <div>
           <div>
@@ -72,7 +74,6 @@
           </div>
         </form>
       </div>
-
 
     </div>
     </div>

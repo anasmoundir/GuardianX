@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {AxiosService} from '../axios.service';
+import {AxiosService} from '../../axios.service';
 @Component({
   selector: 'app-auth-content',
   templateUrl: './auth-content.component.html',
@@ -13,8 +13,6 @@ export class AuthContentComponent {
       "GET",
       "/messages",
       {}
-    ).then((response) => {
-      this.data = response.data;
-    });
+    )
   }
 }
